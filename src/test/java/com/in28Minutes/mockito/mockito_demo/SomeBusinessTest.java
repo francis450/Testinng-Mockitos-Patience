@@ -3,16 +3,23 @@ package com.in28Minutes.mockito.mockito_demo;
 //import org.testng.annotations.Test;
 //import org.junit.jupiter.api.Test;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+//It scans for Mocks using annotations and injects them where necessary
+@RunWith(MockitoJUnitRunner.class)
 public class SomeBusinessTest {
     @Test
     public void testFindTheGreatestFromAllData(){
         DataService dataServicemcok = mock(DataService.class);
         when(dataServicemcok.retrieveAllData()).thenReturn(new int[]{68,125,5,23,45});
-        SomeBusinessImpl business = new SomeBusinessImpl(dataServicemcok);
+        //SomeBusinessImpl business = new SomeBusinessImpl(dataServicemcok);
         int result = business.findTheGraatestFromAllData();
         assertEquals(125,result);
     }
