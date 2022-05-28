@@ -15,6 +15,14 @@ import static org.mockito.Mockito.when;
 //It scans for Mocks using annotations and injects them where necessary
 @RunWith(MockitoJUnitRunner.class)
 public class SomeBusinessTest {
+
+    @Mock//Defines that this is a mock to be used with testing
+    DataService dataServiceMock;
+
+    @InjectMocks//This is where we should inject our mocks
+    SomeBusinessImpl businessImpl;
+
+
     @Test
     public void testFindTheGreatestFromAllData(){
         DataService dataServicemcok = mock(DataService.class);
