@@ -24,9 +24,9 @@ public class SomeBusinessTest {
 
 
     @Test
-    public void testFindTheGreatestFromAllData(){
-        DataService dataServicemcok = mock(DataService.class);
-        when(dataServicemcok.retrieveAllData()).thenReturn(new int[]{68,125,5,23,45});
+    public void testFindTheGreatestFromFiveData(){
+        //DataService dataServicemcok = mock(DataService.class);
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{68,125,5,23,45});
         //SomeBusinessImpl business = new SomeBusinessImpl(dataServicemcok);
         int result = business.findTheGraatestFromAllData();
         assertEquals(125,result);
