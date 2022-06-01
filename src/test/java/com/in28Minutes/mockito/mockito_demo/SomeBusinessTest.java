@@ -31,6 +31,21 @@ public class SomeBusinessTest {
         int result = businessImpl.findTheGraatestFromAllData();
         assertEquals(125,result);
     }
+
+    @Test
+    public void testFindTheGreatestFromoneDataItem(){
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{34});
+        int result = businessImpl.findTheGraatestFromAllData();
+        assertEquals(34,result);
+    }
+
+    @Test
+    public void testFindTheGreatestFromtwoDataItems(){
+        when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{36,43});
+        int result = businessImpl.findTheGraatestFromAllData();
+        assertEquals(43,result);
+    }
+
 }
 
 //-> This is called a stub(Its a class made to he\lp the test class by implementing units neing tested
